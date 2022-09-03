@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src='../../build/aframe-ar.js'></script>
-    <script>
-      THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
-</head>
+<html lang="en">
 
-<body style='margin: 0; overflow: hidden;'>
-<a-scene
-        vr-mode-ui="enabled: false"
-        embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+<body onload=main();>
+<model-viewer id="ar_viewer" poster="https://cdn.dribbble.com/users/765253/screenshots/2540865/loader.gif"
+              alt="AR Model" src="https://api3.profilebud.com/ArmChair.glb" autoplay ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls>
+    <button slot="ar-button"
+            style="background-color: #eb6556; border-radius: 5px; border: none; position: absolute; width: 126px; bottom: 10px; left: calc(50% - 63px); margin: auto; display: block;">
+        <p style="color: aliceblue; margin: 0;">View this in AR ✨</p>
+    </button>
+</model-viewer>
 
-    <a-box material="color: red;" scale="300 300 300" position="0 0 0" gps-entity-place="latitude: 44.498529; longitude: 11.356657;"></a-box>
-    <!-- use far property to hide objects over 5000 meters -->
-    <a-camera far="5000" gps-camera rotation-reader>
-    </a-camera>
-</a-scene>
+<model-viewer id="ar_viewer" poster="https://cdn.dribbble.com/users/765253/screenshots/2540865/loader.gif"
+              alt="AR Model" src="https://api3.profilebud.com/Chair.gltf" autoplay ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls>
+    <button slot="ar-button"
+            style="background-color: #eb6556; border-radius: 5px; border: none; position: absolute; width: 126px; bottom: 10px; left: calc(50% - 63px); margin: auto; display: block;">
+        <p style="color: aliceblue; margin: 0;">View this in AR ✨</p>
+    </button>
+</model-viewer>
+
+
+
+<model-viewer id="ar_viewer" poster="https://cdn.dribbble.com/users/765253/screenshots/2540865/loader.gif"
+              alt="AR Model" src="https://api3.profilebud.com/Horse.glb" autoplay ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" camera-controls>
+    <button slot="ar-button"
+            style="background-color: #eb6556; border-radius: 5px; border: none; position: absolute; width: 126px; bottom: 10px; left: calc(50% - 63px); margin: auto; display: block;">
+        <p style="color: aliceblue; margin: 0;">View this in AR ✨</p>
+    </button>
+</model-viewer>
+
+
 </body>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</html>
